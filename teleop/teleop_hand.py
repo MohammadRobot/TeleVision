@@ -108,7 +108,8 @@ class Sim:
         right_asset_path = "inspire_hand/inspire_hand_right.urdf"
         asset_options = gymapi.AssetOptions()
         asset_options.fix_base_link = True
-        asset_options.default_dof_drive_mode = gymapi.DOF_MODE_POS
+        # asset_options.default_dof_drive_mode = gymapi.DOF_MODE_POS
+        asset_options.default_dof_drive_mode = int(gymapi.DOF_MODE_POS)
         left_asset = self.gym.load_asset(self.sim, asset_root, left_asset_path, asset_options)
         right_asset = self.gym.load_asset(self.sim, asset_root, right_asset_path, asset_options)
         self.dof = self.gym.get_asset_dof_count(left_asset)
